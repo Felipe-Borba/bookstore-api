@@ -1,0 +1,16 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Felipe-Borba/bookstore-api.git",
+  "author": "Felipe Borba <felipe.borba0109@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.3"
+  }
+}
