@@ -1,5 +1,40 @@
 /* Os inserts abaixo devem ser realizados no PostgreSQL */
 
+CREATE TABLE clientes (
+    cliente_id SERIAL PRIMARY KEY,
+    nome VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
+    senha VARCHAR NOT NULL,
+    telefone VARCHAR NOT NULL,
+    endereco VARCHAR NOT NULL 
+);
+
+CREATE TABLE autores (
+    autor_id SERIAL PRIMARY KEY,
+    nome VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
+    telefone VARCHAR NOT NULL
+);
+
+CREATE TABLE livros (
+    livro_id SERIAL PRIMARY KEY,
+    nome VARCHAR NOT NULL,
+    valor NUMERIC NOT NULL,
+    estoque INT NOT NULL,
+    autor_id INT NOT NULL,
+    CONSTRAINT fk_autor FOREIGN KEY (autor_id) REFERENCES autores (autor_id)
+);
+
+CREATE TABLE vendas (
+    venda_id SERIAL PRIMARY KEY,
+    valor NUMERIC NOT NULL,
+    data DATE NOT NULL,
+    cliente_id INT NOT NULL,
+    livro_id INT NOT NULL,
+    CONSTRAINT fk_cliente FOREIGN KEY (cliente_id) REFERENCES clientes (cliente_id),
+    CONSTRAINT fk_livro FOREIGN KEY (livro_id) REFERENCES livros (livro_id)
+);
+
 insert into clientes (nome, email, senha, telefone, endereco) values ('Giovana Betina Barbosa', 'giovanabetinabarbosa@gmail.com', 'ZjRxDsNQt4', '27998835914', 'Rua Tancredo Neves 639, Serra-ES');
 insert into clientes (nome, email, senha, telefone, endereco) values ('Gael Geraldo da Conceição', 'ggconceicao@gmail.com', 'MRalkmBOJq', '69994235684', 'Rua Modigliani 148, Porto Velho-RO');
 insert into clientes (nome, email, senha, telefone, endereco) values ('Francisca Isabel Vieira', 'franvieira@gmail.com', 'kW1bnjci70', '85827093319', 'Rua Dom Henrique 182, São Luís-MA');
@@ -35,6 +70,7 @@ insert into vendas (valor, data, cliente_id, livro_id) values (45, '2000-12-14',
 
 /* Os documentos abaixo devem ser criados no MongoDB */
 
+[
 {
     "livroId": 1,
     "descricao": "O livro trata a respeito de criação de APIs com Node.js, levando ao leitor os principais conceitos necessários para a implementação",
@@ -42,7 +78,7 @@ insert into vendas (valor, data, cliente_id, livro_id) values (45, '2000-12-14',
     "editora": "Editora IGTI",    
     "avaliacoes": [
     ] 
-}
+},
 
 {
     "livroId": 2,
@@ -51,7 +87,7 @@ insert into vendas (valor, data, cliente_id, livro_id) values (45, '2000-12-14',
     "editora": "Editora IGTI",    
     "avaliacoes": [
     ] 
-}
+},
 
 {
     "livroId": 3,
@@ -60,7 +96,7 @@ insert into vendas (valor, data, cliente_id, livro_id) values (45, '2000-12-14',
     "editora": "Editora IGTI",    
     "avaliacoes": [
     ] 
-}
+},
 
 {
     "livroId": 4,
@@ -69,7 +105,7 @@ insert into vendas (valor, data, cliente_id, livro_id) values (45, '2000-12-14',
     "editora": "Editora IGTI",    
     "avaliacoes": [
     ] 
-}
+},
 
 {
     "livroId": 5,
@@ -78,7 +114,7 @@ insert into vendas (valor, data, cliente_id, livro_id) values (45, '2000-12-14',
     "editora": "Editora IGTI",    
     "avaliacoes": [
     ] 
-}
+},
 
 {
     "livroId": 6,
@@ -88,3 +124,4 @@ insert into vendas (valor, data, cliente_id, livro_id) values (45, '2000-12-14',
     "avaliacoes": [
     ] 
 }
+]

@@ -1,12 +1,18 @@
 {
   "name": "bookstore-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "repository": "https://github.com/Felipe-Borba/bookstore-api.git",
   "author": "Felipe Borba <felipe.borba0109@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.0.0",
+    "mongoose": "^5.13.3",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
     "jest": "^27.0.6",
