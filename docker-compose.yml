@@ -13,10 +13,11 @@ services:
   postgres_db:
     image: postgres
     restart: always
+    container_name: postgres-db
     volumes:
       - ./database:/postgres/data
     ports:
-      - 5432:5432
+      - 49153:5432
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: example

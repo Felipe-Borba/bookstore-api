@@ -1,4 +1,5 @@
 const { validationResult } = require("express-validator");
+const clientService = require("../service/client-service");
 
 async function createClient(req, res, next) {
   try {
@@ -6,11 +7,10 @@ async function createClient(req, res, next) {
     if (!validateError.isEmpty()) {
       return res.status(400).json({ error: validateError.array() });
     }
-    
+
     const client = req.body;
 
-    console.log(client);
-    res.send("to be implemented");
+    res.send(await clientService.create(client));
   } catch (error) {
     next(error);
   }
