@@ -13,7 +13,19 @@ router.post(
   check("endereco", "endereco is missing").notEmpty(),
   controller.createClient
 );
-router.get("/", controller.getClient);
+router.put(
+  '/',
+  check("clienteId", "clienteId is missing").notEmpty(),
+  check("nome", "nome is missing").notEmpty(),
+  check("email", "email is missing").notEmpty(),
+  check("senha", "senha is missing").notEmpty(),
+  check("telefone", "telefone is missing").notEmpty(),
+  check("endereco", "endereco is missing").notEmpty(),
+  controller.updateClient
+  );
+router.delete('/:id', controller.deleteClient );
+router.get("/", controller.getClients);
+router.get('/:id', controller.getClient);
 
 // router.post('/consulta-credito',
 //   check('Nome', 'Nome deve ser informado').notEmpty(),

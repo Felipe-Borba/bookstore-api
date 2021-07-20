@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { INTEGER } = require("sequelize/types");
 
 const reviewSchema = new mongoose.Schema(
   {

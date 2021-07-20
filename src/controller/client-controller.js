@@ -16,6 +16,30 @@ async function createClient(req, res, next) {
   }
 }
 
+async function updateClient(req, res, next) {
+  try {
+    res.send("to be implemented");
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function deleteClient(req, res, next) {
+  try {
+    res.send("to be implemented");
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function getClients(req, res, next) {
+  try {
+    res.send("to be implemented");
+  } catch (error) {
+    next(error);
+  }
+}
+
 async function getClient(req, res, next) {
   try {
     res.send("to be implemented");
@@ -26,5 +50,8 @@ async function getClient(req, res, next) {
 
 module.exports = {
   createClient,
+  updateClient,
+  deleteClient,
+  getClients,
   getClient,
 };
