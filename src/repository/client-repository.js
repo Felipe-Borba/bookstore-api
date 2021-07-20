@@ -5,15 +5,19 @@ async function create(client) {
 }
 
 async function update(client) {
+  // TODO to be implemented
 }
 
 async function deleteOne(clientId) {
+  // TODO to be implemented
 }
 
 async function get() {
+  // TODO to be implemented
 }
 
 async function getById(clientId) {
+  // TODO to be implemented
 }
 
 module.exports = {
