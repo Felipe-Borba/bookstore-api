@@ -5,19 +5,27 @@ async function create(author) {
 }
 
 async function update(author) {
-  // TODO to be implemented
+  await Author.update(author, {
+    where: {
+      autorId: author.autorId,
+    },
+  });
+
+  return await getById(author.autorId);
 }
 
-async function deleteOne(authorId) {
-  // TODO to be implemented
+async function deleteOne(autorId) {
+  await Author.destroy({
+    where: { autorId },
+  });
 }
 
 async function get() {
-  // TODO to be implemented
+  return await Author.findAll();
 }
 
 async function getById(authorId) {
-  // TODO to be implemented
+  return await Author.findByPk(authorId);
 }
 
 module.exports = {

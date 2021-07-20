@@ -5,19 +5,27 @@ async function create(client) {
 }
 
 async function update(client) {
-  // TODO to be implemented
+  await Client.update(client, {
+    where: {
+      clienteId: client.clienteId,
+    },
+  });
+
+  return await getById(client.clienteId);
 }
 
-async function deleteOne(clientId) {
-  // TODO to be implemented
+async function deleteOne(clienteId) {
+  await Client.destroy({
+    where: { clienteId },
+  });
 }
 
 async function get() {
-  // TODO to be implemented
+  return await Client.findAll();
 }
 
 async function getById(clientId) {
-  // TODO to be implemented
+  return await Client.findByPk(clientId);
 }
 
 module.exports = {
