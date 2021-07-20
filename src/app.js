@@ -3,12 +3,12 @@ const app = express();
 const cors = require("cors");
 
 const clientRouter = require("./router/client-router");
-const bookInfoRouter = require("./router/book-info-router")
+const bookInfoRouter = require("./router/book-router")
 
 app.use(express.json());
 app.use(cors());
 app.use("/cliente", clientRouter);
-app.use("/livro/info", bookInfoRouter)
+app.use("/livro", bookInfoRouter)
 
 app.use((err, req, res, _) => {
   console.log(`${req.method} ${req.baseUrl} - ${err.message}`);

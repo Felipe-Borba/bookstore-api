@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const reviewSchema = require("./review-schema");
 
 const BookInfoSchema = new mongoose.Schema(
   {
@@ -6,9 +7,9 @@ const BookInfoSchema = new mongoose.Schema(
     descricao: String,
     paginas: Number,
     editora: String,
-    avaliacoes: [],
+    avaliacoes: [reviewSchema],
   },
-  { collection: "livro_info", _id: false }
+  { collection: "livro_info" }
 );
 
 module.exports = BookInfoSchema;
