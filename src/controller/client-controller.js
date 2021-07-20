@@ -18,6 +18,12 @@ async function createClient(req, res, next) {
 
 async function updateClient(req, res, next) {
   try {
+    const validateError = validationResult(req);
+    if (!validateError.isEmpty()) {
+      return res.status(400).json({ error: validateError.array() });
+    }
+    const client = req.body;
+    
     res.send("to be implemented");
   } catch (error) {
     next(error);
@@ -26,6 +32,7 @@ async function updateClient(req, res, next) {
 
 async function deleteClient(req, res, next) {
   try {
+
     res.send("to be implemented");
   } catch (error) {
     next(error);
