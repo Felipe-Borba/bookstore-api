@@ -52,7 +52,9 @@ async function getClients(req, res, next) {
 
 async function getClient(req, res, next) {
   try {
-    res.send("to be implemented");
+    const clientId = req.params.id
+
+    res.send( await clientService.getById(clientId));
   } catch (error) {
     next(error);
   }
