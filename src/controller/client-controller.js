@@ -44,7 +44,7 @@ async function deleteClient(req, res, next) {
 
 async function getClients(req, res, next) {
   try {
-    res.send("to be implemented");
+    res.send( await clientService.get());
   } catch (error) {
     next(error);
   }
