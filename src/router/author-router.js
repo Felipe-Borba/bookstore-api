@@ -13,7 +13,7 @@ router.post(
 );
 router.put(
   "/",
-  check("autorId", "clienteId is missing").notEmpty(),
+  check("autorId", "autorId is missing").notEmpty(),
   check("nome", "nome is missing").notEmpty(),
   check("email", "email is missing").notEmpty(),
   check("telefone", "telefone is missing").notEmpty(),

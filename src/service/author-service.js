@@ -18,7 +18,7 @@ async function get() {
 }
 
 async function getById(authorId) {
-  return await authorRepository.create(authorId);
+  return await authorRepository.getById(authorId);
 }
 
 module.exports = {

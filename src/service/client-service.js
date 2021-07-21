@@ -20,7 +20,7 @@ async function get() {
 
 async function getById(clientId) {
   //TODO do not return password field
-  return await clientRepository.create(clientId);
+  return await clientRepository.getById(clientId);
 }
 
 module.exports = {
