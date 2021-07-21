@@ -23,7 +23,7 @@ async function updateClient(req, res, next) {
       return res.status(400).json({ error: validateError.array() });
     }
     const client = req.body;
-    
+
     res.send(await clientService.update(client));
   } catch (error) {
     next(error);
@@ -32,7 +32,7 @@ async function updateClient(req, res, next) {
 
 async function deleteClient(req, res, next) {
   try {
-    const clientId = req.params.id
+    const clientId = req.params.id;
 
     await clientService.deleteOne(clientId);
 
@@ -44,7 +44,7 @@ async function deleteClient(req, res, next) {
 
 async function getClients(req, res, next) {
   try {
-    res.send( await clientService.get());
+    res.send(await clientService.get());
   } catch (error) {
     next(error);
   }
@@ -52,9 +52,9 @@ async function getClients(req, res, next) {
 
 async function getClient(req, res, next) {
   try {
-    const clientId = req.params.id
+    const clientId = req.params.id;
 
-    res.send( await clientService.getById(clientId));
+    res.send(await clientService.getById(clientId));
   } catch (error) {
     next(error);
   }
