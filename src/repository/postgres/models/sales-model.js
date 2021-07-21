@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
-const Book = require("./book-model")
-const Client = require("./client-model")
+const Book = require("./book-model");
+const Client = require("./client-model");
 
 const Sale = db.define(
   "vendas",

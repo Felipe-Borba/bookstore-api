@@ -12,15 +12,15 @@ router.post(
   authorController.create
 );
 router.put(
-  '/',
+  "/",
   check("autorId", "clienteId is missing").notEmpty(),
   check("nome", "nome is missing").notEmpty(),
   check("email", "email is missing").notEmpty(),
   check("telefone", "telefone is missing").notEmpty(),
   authorController.update
-  );
-router.delete('/:id', authorController.deleteById );
+);
+router.delete("/:id", authorController.deleteById);
 router.get("/", authorController.get);
-router.get('/:id', authorController.getById);
+router.get("/:id", authorController.getById);
 
 module.exports = router;

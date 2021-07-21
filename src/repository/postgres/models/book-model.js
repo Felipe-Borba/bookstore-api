@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
-const Author = require("./author-model")
+const Author = require("./author-model");
 
 const Book = db.define(
   "livros",

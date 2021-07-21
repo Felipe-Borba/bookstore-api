@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const service = require("../service/book-service")
+const service = require("../service/book-service");
 
 async function createBookInfo(req, res, next) {
   try {
@@ -10,12 +10,12 @@ async function createBookInfo(req, res, next) {
 
     const bookInfo = req.body;
     console.log(bookInfo);
-    res.send(await service.createBookInfo(bookInfo))
+    res.send(await service.createBookInfo(bookInfo));
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
 module.exports = {
-  createBookInfo
-}
+  createBookInfo,
+};

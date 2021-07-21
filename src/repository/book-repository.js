@@ -29,9 +29,7 @@ async function get() {
 
 async function getById(bookId) {
   return await Book.findByPk(bookId, {
-    include: [
-      {        model: Author      },
-    ],
+    include: [{ model: Author }],
   });
 }
 

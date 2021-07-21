@@ -14,7 +14,7 @@ router.post(
   controller.createClient
 );
 router.put(
-  '/',
+  "/",
   check("clienteId", "clienteId is missing").notEmpty(),
   check("nome", "nome is missing").notEmpty(),
   check("email", "email is missing").notEmpty(),
@@ -22,10 +22,10 @@ router.put(
   check("telefone", "telefone is missing").notEmpty(),
   check("endereco", "endereco is missing").notEmpty(),
   controller.updateClient
-  );
-router.delete('/:id', controller.deleteClient );
+);
+router.delete("/:id", controller.deleteClient);
 router.get("/", controller.getClients);
-router.get('/:id', controller.getClient);
+router.get("/:id", controller.getClient);
 
 // router.post('/consulta-credito',
 //   check('Nome', 'Nome deve ser informado').notEmpty(),
