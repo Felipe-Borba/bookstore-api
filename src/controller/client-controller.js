@@ -24,7 +24,7 @@ async function updateClient(req, res, next) {
     }
     const client = req.body;
     
-    res.send("to be implemented");
+    res.send(await clientService.update(client));
   } catch (error) {
     next(error);
   }
