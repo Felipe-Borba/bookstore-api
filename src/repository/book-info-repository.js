@@ -13,6 +13,26 @@ async function create(bookInfo) {
   return await bookInfo.save();
 }
 
+async function update(bookInfo) {
+  
+}
+
+async function deleteOne(bookId) {
+  
+}
+
+async function createReview(review) {
+  
+}
+
+async function deleteReview(index) {
+  
+}
+
 module.exports = {
-  create
+  create,
+  update,
+  deleteOne,
+  createReview,
+  deleteReview
 }
