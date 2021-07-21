@@ -32,8 +32,11 @@ async function updateClient(req, res, next) {
 
 async function deleteClient(req, res, next) {
   try {
+    const clientId = req.params.id
 
-    res.send("to be implemented");
+    await clientService.deleteOne(clientId);
+
+    res.end();
   } catch (error) {
     next(error);
   }
