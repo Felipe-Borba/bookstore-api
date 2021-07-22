@@ -4,7 +4,7 @@ const reviewSchema = new mongoose.Schema(
   {
     nome: String,
     nota: Number,
-    avaliacoe: String,
+    avaliacao: String,
   },
   { collection: "livro_info", _id: false }
 );

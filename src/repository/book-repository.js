@@ -33,10 +33,18 @@ async function getById(bookId) {
   });
 }
 
+async function getByAuthorId(autorId) {
+  return await Book.findAll({
+    where: { autorId },
+    include: [{ model: Author }],
+  });
+}
+
 module.exports = {
   create,
   update,
   deleteOne,
   get,
   getById,
+  getByAuthorId,
 };
