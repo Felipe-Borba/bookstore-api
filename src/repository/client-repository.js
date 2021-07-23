@@ -28,10 +28,17 @@ async function getById(clientId) {
   return await Client.findByPk(clientId);
 }
 
+async function getByEmail(email) {
+  return await Client.findOne({
+    where: { email },
+  });
+}
+
 module.exports = {
   create,
   update,
   deleteOne,
   get,
   getById,
+  getByEmail,
 };
