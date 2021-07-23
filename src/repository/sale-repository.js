@@ -1,7 +1,8 @@
-const Sale = require("./postgres/models/sale-model");
+const Sale = require("./postgres/models/sales-model");
 const Book = require("./postgres/models/book-model");
 const Client = require("./postgres/models/client-model");
 const Author = require("./postgres/models/author-model");
+const { Op } = require("sequelize");
 
 async function create(sale) {
   return await Sale.create(sale);
@@ -23,7 +24,21 @@ async function deleteOne(vendaId) {
   });
 }
 
-async function get() {
+async function get(filter) {
+  const autorId = filter.autorId;
+  if(autorId) {
+    return await Sale.findAll({
+      include: [
+        { model: Client },
+        {
+          model: Book,
+          include: [{ model: Author }],
+          where: { ...filter },
+        },
+      ],
+    });
+  }
+
   return await Sale.findAll({
     include: [
       { model: Client },
@@ -32,6 +47,7 @@ async function get() {
         include: [{ model: Author }],
       },
     ],
+    where: { ...filter },
   });
 }
 

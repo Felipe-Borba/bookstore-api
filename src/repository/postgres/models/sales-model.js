@@ -6,20 +6,24 @@ const Client = require("./client-model");
 const Sale = db.define(
   "vendas",
   {
-    vandaId: {
+    vendaId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
     valor: {
-      type: Sequelize.DATE,
+      type: Sequelize.NUMBER,
       allowNull: false,
     },
+    data: {
+      type: Sequelize.DATE,
+      allowNull: false
+    }
   },
   { underscored: true }
 );
 Sale.belongsTo(Book, { foreignKey: "livroId" });
-Sale.belongsTo(Client, { foreignKey: "livroId" });
+Sale.belongsTo(Client, { foreignKey: "clienteId" });
 
 module.exports = Sale;
