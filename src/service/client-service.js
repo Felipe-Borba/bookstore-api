@@ -5,6 +5,7 @@ async function create(client) {
 }
 
 async function update(client) {
+  // TODO only their own data
   return await clientRepository.update(client);
 }
 
@@ -15,7 +16,7 @@ async function deleteOne(clientId) {
 
 async function get() {
   //TODO do not return password field
-  return await clientRepository.get(); 
+  return await clientRepository.get();
 }
 
 async function getById(clientId) {

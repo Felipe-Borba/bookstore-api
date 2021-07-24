@@ -12,3 +12,7 @@ ou
 ```bash
 docker-compose up
 ```
+
+reiniciar tabela
+
+TRUNCATE autores, clientes, livros, vendas RESTART IDENTITY
